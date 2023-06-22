@@ -1,0 +1,20 @@
+import nltk
+nltk.download('averaged_perceptron_tagger')
+from nltk import pos_tag,word_tokenize,RegexpParser
+
+to_parse="Virat Kohli is best player in  the world"
+
+tagged_parts=pos_tag(word_tokenize(to_parse))
+
+grammar=r"""
+NP:{<DT>?<JJ>*<NN>}
+P:{<IN>}
+V:{<V.*>}
+PP:{<P><NP>}
+Vp:{<V><NP/PP>*}"""
+
+parse=RegexpParser(grammar)
+
+Output=parse.parse(tagged_parts)
+
+print("\nAfterExtractingtheparts \n\n",Output,"\n")

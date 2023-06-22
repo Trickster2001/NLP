@@ -1,0 +1,21 @@
+import nltk
+import numpy as np
+import pandas as pd
+import random
+from sklearn.model_selection import train_test_split
+import pprint,time
+nltk.download('treebank')
+nltk.download('universal_tagset')
+nltk_data=list(nltk.corpus.treebank.tagged_sents(tagset='universal'))
+print(nltk_data[:2])
+
+
+import nltk
+nltk.download('treebank')
+nltk.download('brown')
+nltk.download('conll2000')
+treebank_corpus=nltk.corpus.treebank.tagged_sents(tagset='universal')
+brown_corpus=nltk.corpus.brown.tagged_sents(tagset='universal')
+conll_corpus=nltk.corpus.conll2000.tagged_sents(tagset='universal')
+tagged_sentences=treebank_corpus+brown_corpus+conll_corpus
+print(tagged_sentences)

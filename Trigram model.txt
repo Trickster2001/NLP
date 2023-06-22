@@ -1,0 +1,6 @@
+from nltk.util import ngrams
+n=3
+sentence='please goi through this guide how to mange your vertual environment managers before yo install'
+unigrams=ngrams(sentence.split(),n)
+for items in unigrams:
+  print(items)

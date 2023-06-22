@@ -1,0 +1,7 @@
+import spacy
+from spacy import displacy
+NER = spacy.load("en_core_web_sm")
+row_text = "India won the first world cup in 1983 under kapil dev and secound world cup in 2011 under MS Dhoni "
+text1 = NER(row_text)
+for word in text1.ents:
+  print(word.text,word.label_)

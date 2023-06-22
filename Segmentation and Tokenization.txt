@@ -1,0 +1,11 @@
+Sentence segmentation 
+import spacy
+nlp = spacy.load("en_core_web_sm")
+doc = nlp(u"I Love Coding. Geeks for Geeks helped me in this regard very much. I Love Geeks for Geeks.")
+for sent in doc.sents:
+  print(sent)
+
+ Word Tokenization: 
+from nltk.tokenize import RegexpTokenizer
+tokenizer = RegexpTokenizer(r'\w+')
+tokenizer.tokenize('I Love # Coding. ! Geeks for Geeks helped me in this regard very much. I Love Geeks for Geeks.')
